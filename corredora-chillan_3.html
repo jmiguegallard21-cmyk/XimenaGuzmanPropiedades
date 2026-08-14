@@ -253,6 +253,22 @@
   .property-photo.photo-contain img{object-fit:contain; background:var(--stone-100);}
   .property-photo.gallery-2{display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--white);}
   .property-photo.gallery-2 img{width:100%; height:100%; object-fit:cover; display:block;}
+  .property-photo.gallery{position:relative;}
+  .property-photo.gallery img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:0; transition:opacity .4s ease;
+  }
+  .property-photo.gallery img.active{opacity:1;}
+  .gallery-dots{
+    position:absolute; z-index:3; left:0; right:0; bottom:12px;
+    display:flex; justify-content:center; gap:6px;
+  }
+  .gallery-dots button{
+    width:6px; height:6px; padding:0; border-radius:50%;
+    border:1px solid var(--white); background:rgba(255,255,255,0.45);
+    transition:background .2s ease;
+  }
+  .gallery-dots button.active{background:var(--white);}
   .property-info{padding:20px 22px;}
   .property-info .p-loc{
     font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone-600);
@@ -502,9 +518,16 @@
         </article>
 
         <article class="property-card" data-category="departamentos">
-          <div class="property-photo has-photo gallery-2">
-            <img src="img/depto-almagro-bano.jpg" alt="Departamento en Parque Almagro, Chillán — baño">
+          <div class="property-photo has-photo gallery" data-gallery>
+            <img src="img/depto-almagro-living-2.jpg" alt="Departamento en Parque Almagro, Chillán — living y cocina" class="active">
+            <img src="img/depto-almagro-living-1.jpg" alt="Departamento en Parque Almagro, Chillán — living y balcón">
+            <img src="img/depto-almagro-cocina-1.jpg" alt="Departamento en Parque Almagro, Chillán — cocina">
+            <img src="img/depto-almagro-cocina-2.jpg" alt="Departamento en Parque Almagro, Chillán — cocina y pasillo">
+            <img src="img/depto-almagro-dormitorio-2.jpg" alt="Departamento en Parque Almagro, Chillán — dormitorio con balcón">
             <img src="img/depto-almagro-dormitorio.jpg" alt="Departamento en Parque Almagro, Chillán — dormitorio">
+            <img src="img/depto-almagro-bano.jpg" alt="Departamento en Parque Almagro, Chillán — baño">
+            <img src="img/depto-almagro-piscina.jpg" alt="Departamento en Parque Almagro, Chillán — piscina y áreas comunes">
+            <div class="gallery-dots"></div>
           </div>
           <div class="property-info">
             <div class="p-loc">Parque Almagro, Chillán</div>
@@ -650,6 +673,28 @@
       submitBtn.disabled = false;
       submitBtn.textContent = submitBtnDefaultText;
     }
+  });
+
+  // Mini-carrusel de fotos por propiedad (puntos de navegación)
+  document.querySelectorAll('[data-gallery]').forEach(gallery => {
+    const imgs = gallery.querySelectorAll('img');
+    const dotsWrap = gallery.querySelector('.gallery-dots');
+    if(imgs.length <= 1) return;
+    imgs.forEach((img, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Foto ${i + 1} de ${imgs.length}`);
+      if(i === 0) dot.classList.add('active');
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        imgs.forEach(im => im.classList.remove('active'));
+        dotsWrap.querySelectorAll('button').forEach(d => d.classList.remove('active'));
+        img.classList.add('active');
+        dot.classList.add('active');
+      });
+      dotsWrap.appendChild(dot);
+    });
   });
 
   // Filtro de propiedades por categoría
