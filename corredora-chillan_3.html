@@ -250,6 +250,13 @@
   }
   .property-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .property-photo.has-photo::after{display:none;}
+  .property-photo.has-photo::before{
+    content:''; position:absolute; z-index:4; right:10px; bottom:10px;
+    width:64px; height:64px;
+    background-image:url('img/marca-agua-logo.png');
+    background-size:contain; background-repeat:no-repeat; background-position:center;
+    opacity:0.85; pointer-events:none;
+  }
   .property-photo.photo-contain img{object-fit:contain; background:var(--stone-100);}
   .property-photo.gallery-2{display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--white);}
   .property-photo.gallery-2 img{width:100%; height:100%; object-fit:cover; display:block;}
@@ -439,8 +446,8 @@
       <a href="#directorio" class="btn btn-ghost">Asesoría Financiera</a>
     </div>
     <div class="hero-foot">
-      <div class="stat"><b>+120</b><span>Operaciones cerradas</span></div>
-      <div class="stat"><b>15 años</b><span>Experiencia en banca y bienes raíces</span></div>
+      <div class="stat"><b>+100</b><span>Operaciones cerradas</span></div>
+      <div class="stat"><b>5 años</b><span>Experiencia en banca y bienes raíces</span></div>
       <div class="stat"><b>100%</b><span>Compradores validados crediticiamente</span></div>
     </div>
   </div>
@@ -451,14 +458,14 @@
   <div class="wrap">
     <div class="director-portrait">
       <div class="cap">Ximena Guzmán
-        <small>+10 años en Banca Persona y Banca Empresa</small>
+        <small>+5 años en Banca Persona y Banca Empresa</small>
       </div>
     </div>
     <div class="director-content">
       <div class="section-label">Por qué elegirnos</div>
       <h2 class="section-title">Dirección Ejecutiva: Ximena Guzmán</h2>
       <p class="director-quote">
-        <span class="lead-mark">“</span>A diferencia de una corredora tradicional, Ximena Guzmán aporta más de 10 años de experiencia directa en la Banca Persona y Banca Empresa. Esto se traduce en una ventaja competitiva insuperable para nuestros clientes: un dominio absoluto sobre la estructuración de créditos hipotecarios, evaluaciones comerciales y plazos notariales. Para el vendedor, esto significa filtrar a compradores con viabilidad bancaria real, evitando que los procesos se caigan. Para el comprador, significa un acompañamiento experto que acelera la aprobación crediticia y asegura las mejores condiciones del mercado.
+        <span class="lead-mark">“</span>A diferencia de una corredora tradicional, Ximena Guzmán aporta más de 5 años de experiencia directa en la Banca Persona y Banca Empresa. Esto se traduce en una ventaja competitiva insuperable para nuestros clientes: un dominio absoluto sobre la estructuración de créditos hipotecarios, evaluaciones comerciales y plazos notariales. Para el vendedor, esto significa filtrar a compradores con viabilidad bancaria real, evitando que los procesos se caigan. Para el comprador, significa un acompañamiento experto que acelera la aprobación crediticia y asegura las mejores condiciones del mercado.
       </p>
       <div class="director-pillars">
         <div class="pillar">
