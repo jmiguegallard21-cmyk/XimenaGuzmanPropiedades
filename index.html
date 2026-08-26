@@ -546,6 +546,27 @@
           </div>
         </article>
 
+        <article class="property-card" data-category="departamentos">
+          <div class="property-photo has-photo gallery" data-gallery>
+            <img src="img/depto-longavi-living.jpg" alt="Departamento en Nevados de Longaví, Chillán — living y balcón" class="active">
+            <img src="img/depto-longavi-cocina.jpg" alt="Departamento en Nevados de Longaví, Chillán — cocina">
+            <img src="img/depto-longavi-dormitorio-1.jpg" alt="Departamento en Nevados de Longaví, Chillán — dormitorio">
+            <img src="img/depto-longavi-dormitorio-2.jpg" alt="Departamento en Nevados de Longaví, Chillán — dormitorio principal">
+            <img src="img/depto-longavi-dormitorio-2b.jpg" alt="Departamento en Nevados de Longaví, Chillán — dormitorio principal, closet">
+            <img src="img/depto-longavi-exterior-1.jpg" alt="Departamento en Nevados de Longaví, Chillán — estacionamientos y áreas comunes">
+            <img src="img/depto-longavi-exterior-2.jpg" alt="Departamento en Nevados de Longaví, Chillán — fachada del edificio">
+            <div class="gallery-dots"></div>
+          </div>
+          <div class="property-info">
+            <div class="p-loc">Nevados de Longaví, Chillán</div>
+            <h3>Departamento en arriendo, 2D / 1B</h3>
+            <div class="deed-line">
+              <div class="price">$350.000 <small>+ gastos comunes</small></div>
+              <div class="p-tag">En arriendo</div>
+            </div>
+          </div>
+        </article>
+
         <p class="filter-empty" id="filterEmpty" style="display:none; font-size:14px; color:var(--stone-600); padding:12px 2px;">
           Por el momento no hay propiedades publicadas en esta categoría. Escríbanos y le avisamos apenas ingrese una nueva.
         </p>
@@ -598,6 +619,7 @@
         <select id="property" name="property" required>
           <option value="" disabled selected>Seleccione una opción</option>
           <option value="Departamento en arriendo, Parque Almagro">Departamento en arriendo, Parque Almagro</option>
+          <option value="Departamento en arriendo, Nevados de Longaví">Departamento en arriendo, Nevados de Longaví</option>
           <option value="Departamento vista centro">Departamento vista centro</option>
           <option value="Casa en Villa Barcelona, 4D / 3B">Casa en Villa Barcelona, 4D / 3B</option>
           <option value="Otra / Aún no decido">Otra / Aún no decido</option>
@@ -738,7 +760,8 @@
   const properties = [
     { position: [-36.6067, -72.1033], title: 'Departamento vista centro' },
     { position: [-36.5940, -72.0657], title: 'Casa en Villa Barcelona, 4D / 3B' },
-    { position: [-36.5972, -72.0932], title: 'Departamento en arriendo, Parque Almagro (ubicación aproximada)' }
+    { position: [-36.5972, -72.0932], title: 'Departamento en arriendo, Parque Almagro (ubicación aproximada)' },
+    { position: [-36.6245, -72.0828], title: 'Departamento en arriendo, Nevados de Longaví (ubicación aproximada)' }
   ];
 
   properties.forEach(prop => {
