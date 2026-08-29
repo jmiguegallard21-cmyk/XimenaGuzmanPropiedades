@@ -253,6 +253,15 @@
     opacity:0.85; pointer-events:none;
   }
   .property-photo.photo-contain img{object-fit:contain; background:var(--stone-100);}
+  .property-card.is-taken .property-photo{filter:grayscale(0.9) brightness(0.82);}
+  .property-card.is-taken .property-info{opacity:0.6;}
+  .property-card.is-taken .p-tag{color:var(--stone-600); border-color:var(--stone-400);}
+  .status-ribbon{
+    position:absolute; z-index:6; top:20px; right:-34px;
+    background:var(--ink); color:var(--stone-50);
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600;
+    padding:6px 42px; transform:rotate(45deg);
+  }
   .property-photo.gallery-2{display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--white);}
   .property-photo.gallery-2 img{width:100%; height:100%; object-fit:cover; display:block;}
   .property-photo.gallery{position:relative;}
