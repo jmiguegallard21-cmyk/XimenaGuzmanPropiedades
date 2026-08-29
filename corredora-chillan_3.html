@@ -175,26 +175,7 @@
     padding:120px 0;
   }
   .director .wrap{
-    display:grid; grid-template-columns:0.85fr 1.15fr; gap:80px; align-items:center;
-  }
-  .director-portrait{
-    aspect-ratio:3/4; background:linear-gradient(160deg, #3a372f, #201e1a);
-    border:1px solid rgba(201,176,138,0.25);
-    display:flex; align-items:flex-end; padding:28px;
-    position:relative; overflow:hidden;
-  }
-  .director-portrait::before{
-    content:'';
-    position:absolute; inset:0;
-    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 22px);
-  }
-  .director-portrait .cap{
-    font-family:var(--serif); font-size:14px; color:var(--stone-100);
-    letter-spacing:0.02em; position:relative; z-index:1;
-  }
-  .director-portrait .cap small{
-    display:block; font-family:var(--sans); font-size:11px; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--bronze-soft); margin-top:6px;
+    display:grid; grid-template-columns:1fr; gap:80px; align-items:center;
   }
   .director-content .section-label{color:var(--bronze-soft);}
   .director-content h2{color:var(--white); max-width:none;}
@@ -401,7 +382,6 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:960px){
     .director .wrap{grid-template-columns:1fr; gap:48px;}
-    .director-portrait{max-width:320px;}
     .split{grid-template-columns:1fr;}
     .catalog-side{border-right:none; border-bottom:1px solid var(--stone-200);}
     .map-side{min-height:360px;}
@@ -470,11 +450,6 @@
 <!-- ===================== PERFIL DIRECTIVO / DIFERENCIADOR ===================== -->
 <section class="director" id="directorio">
   <div class="wrap">
-    <div class="director-portrait">
-      <div class="cap">Ximena Guzmán
-        <small>+5 años en Banca Persona y Banca Empresa</small>
-      </div>
-    </div>
     <div class="director-content">
       <div class="section-label">Por qué elegirnos</div>
       <h2 class="section-title">Dirección Ejecutiva: Ximena Guzmán</h2>
